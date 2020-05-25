@@ -1,0 +1,69 @@
+<div class="columns">
+  <aside class="column sidebar is-narrow">
+    <section class="section">
+      <nav class="menu">
+        <ul class="menu-list">
+          ${Menu}
+          <template id="MenuItem">
+            <li><a class="${Active}" href="${Url}">${Text}</a></li>
+          </template>
+        </ul>
+      </nav>
+    </section>
+  </aside>
+  <div class="column">
+    <section class="section">
+      ${Body}
+
+      <div id="notification-area">
+        <div>${Error}</div>
+      </div>
+
+      <template id="Home">
+        <div class="content">
+          <ul>
+            <li>
+              <a class="button is-primary is-large" onclick="${LoadFlashCards}">Load Input</a>
+            </li>
+            <li>
+              <a class="button is-primary is-large" onclick="${GenerateFlashCards}">Generate Flashcards</a>
+            </li>
+          </ul>
+        </div>
+      </template>
+
+      <template id="ErrorNotification">
+        <div class="notification is-warning">
+          <button class="delete ${HideClass}" onclick="${Hide}"></button>
+          ${Text}
+        </div>
+      </template>
+
+      <template id="Flashcards">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Flashcards
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <svg class="svg-inline--fa fa-angle-down fa-w-10" aria-hidden="true" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
+                <!-- <i class="fas fa-angle-down" aria-hidden="true"></i> -->
+              </span>
+            </a>
+          </header>
+          <div class="card-content is-centered">
+            <div class="content">
+              ${FlashcardText}
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item" onclick="${Know}">Je sais</a>
+            <a href="#" class="card-footer-item" onclick="${Learned}">J'ai appris</a>
+            <a href="#" class="card-footer-item" onclick="${Repeat}">Répéter</a>
+          </footer>
+        </div>
+    </template>
+    </section>
+  </div>
+</div>
